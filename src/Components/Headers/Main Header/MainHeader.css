@@ -1,0 +1,145 @@
+#navBar{
+    background: #36465d;
+    height: 54px;
+    width: 100vw;
+    border-bottom: #505e72 solid 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#iconContainer{
+    
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 25px;
+    
+}
+
+#logoContainer{
+    display: flex;
+    align-items: center;
+    
+}
+
+#iconh{
+    height: 25px;
+    width: auto;
+    
+}
+
+#iconh:hover{
+    cursor: pointer;
+}
+
+#edit{
+    height: 35px;
+}
+
+#edit{
+    cursor: pointer;
+}
+
+#logoh{
+    height: 34px;
+    width: auto;
+    padding-left: 25px;
+    padding-right: 15px;
+    
+}
+
+.hide{
+    display: none;
+}
+
+.glass{
+    height: 22px;
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#search{
+    background: #2f3d51;
+    width: 50vw;
+    max-width: 600px;
+    height: 60%;
+    border-radius: 1%;
+    display: flex;
+    color: #919aa7;
+    
+}
+#searchbar{
+    display: flex;
+    align-items: center;
+}
+
+#modals{
+    /* padding-top: 55px; */
+    width: 100vw;
+    padding-right: 40px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 101;
+}
+
+.userinfomod{
+    
+    height: 330px;
+    width: 300px;
+    overflow: hidden;
+    transition: .75s ease width, 1s ease height;
+    z-index: 101;
+}
+
+.chatmod{
+    width: 300px;
+    margin-right: 50px;
+    height: 330px;
+    overflow: hidden;
+    transition: .75s ease height, 1s ease width;
+    z-index: 101;
+    
+}
+
+.hidemodal{
+    height: 0;
+    width: 0;
+}
+
+#headerLogo{
+    fill: whitesmoke;
+    height: 34px;
+}
+
+#headerLogo:hover{
+    animation: rainbow .5s infinite;
+}
+
+.subheader{
+    background: #36465d;
+    width: 100vw;
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    font: 12px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+    color:  rgba(255, 255, 255, 0.781);
+    font-weight: 700;
+    font: bold;
+    position: fixed;
+    z-index: 100;
+  }
+
+@keyframes rainbow{
+    0%{fill: pink}
+    14%{fill: peachpuff}
+    28%{fill: palegoldenrod}
+    42%{fill: springgreen}
+    56%{fill: powderblue}
+    70%{fill: plum}
+    84%{fill: violet}
+    100%{fill: palevioletred}
+}

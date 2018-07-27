@@ -1,0 +1,8 @@
+#mainChat{
+    background: white;
+    height: 100px;
+    width:280px;
+    position: fixed;
+    right: 75px;
+    top: 50px;
+}

@@ -1,0 +1,23 @@
+#dpmain{
+    background: white;
+    width: 300px;
+    border-radius: 4px;
+    margin: 5px;
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    font-size: 0; 
+    overflow: hidden;
+}
+
+.dpheader{
+    height: 60px;
+}
+
+.dpcontent{
+    min-height: 100px;
+}
+
+.dpfooter{
+    height: 60px;
+}

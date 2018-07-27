@@ -1,0 +1,63 @@
+#exploremain{
+    background: #36465d;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    
+  }
+  
+  #explorebody{
+    padding-top: 110px;
+    display: flex;
+    justify-content: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.categories{
+  display: flex;
+  width: 35%;
+  justify-content: space-evenly;
+}
+
+.categories p:hover{
+  color: white;
+}
+
+#explorechat{
+  width: 300px;
+  height: 300px;
+  float: right;
+  margin-left: 10px;
+}
+
+#exploreposts{
+  width: auto;
+  max-width: 950px;
+  /* display: flex; 
+ flex-direction: row; 
+  flex-wrap: wrap; */
+}
+
+/* #exploreposts #eppost{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-flow: row wrap;
+  
+} */
+
+/* .grid-item { width: 300px; */
+/* margin: 5px;  */
+/* } */
+/* .grid-item--width2 { width: 400px; } */
+
+.dpcontent img{
+width: 300px;
+height: auto;
+}
+
+footer{
+  height: 150px;
+  background: #36465d;
+}
+

@@ -1,0 +1,93 @@
+/* 242 x 383 */
+
+#ui{
+    background: white;
+    width: 242px;
+    border-radius: 4px;
+    margin-left: 15px;
+    font: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    color: #919aa7;
+}
+
+.uiheader{
+    background: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+    padding-left: 10px;
+    height: 27px;
+    font: 12px Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    color: #919aa7;
+}
+
+#signoutbutton{
+    background: transparent;
+    border: none;
+    font: 12px Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    color: #919aa7;
+    cursor: pointer;
+}
+
+.uiheaderleft{
+    font-weight: 600;
+}
+
+.uicolumn{
+    display: flex;
+    height: 36px;
+    justify-content: space-between;
+    padding: 0px 15px 0px 15px;
+    align-items: center;
+    font-size: 14px;
+    color: #444444;
+    cursor: pointer;
+}
+
+.hov:hover{
+    background: #e6eff7;
+    cursor: pointer;
+}
+
+.leftwrapper{
+    display: flex;
+}
+
+.uiimage{
+    margin-right: 10px;
+}
+
+
+.uiuser{
+    height: 57px;
+    display: flex;
+    padding: 0 0px 0 15px;
+    align-items: center;
+    font-size: 14px;
+    color: #444444;
+}
+
+.uiusername{
+    font-weight: 600;
+}
+
+.uiuserimg{
+    margin-right: 15px;
+}
+
+.uiuserimg img{
+    height: 37px;
+}
+
+.uibtext{
+    height: 27px;
+    margin-left: 70px;
+    text-align: left;
+    font-size: 14px;
+    color: #444444;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+

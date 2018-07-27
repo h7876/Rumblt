@@ -1,0 +1,1 @@
+delete from following where userid = $1 and followeduserid = $2;

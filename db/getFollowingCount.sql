@@ -1,0 +1,1 @@
+select count(*) from following where userid = $1;

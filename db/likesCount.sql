@@ -1,0 +1,1 @@
+select count(*) from likes where userid = $1;

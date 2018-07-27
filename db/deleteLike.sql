@@ -1,0 +1,1 @@
+delete from likes where userid = $1 and postid = $2;

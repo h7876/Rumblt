@@ -1,0 +1,78 @@
+#maindashfeed{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font: 12px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+.posterimage{
+    
+    height: 64px;
+    width: 64px;
+    border-radius: 4px;
+    position: sticky;
+    top: 74px;
+    overflow: hidden;
+}
+
+.pdtext{
+    height: auto;
+    background: white;
+    min-height: 100px;
+    font-size: 14px;
+    display: block;
+    word-wrap: break-word;
+    max-height: 450px;
+    overflow: auto;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-top: 15px;
+    color:  #667284;
+
+}
+
+
+.posterimage img{
+    display: block;
+    height: 64px;
+    min-width: 64px;
+}
+
+.postdisplay{
+    width: 540px;
+    background: white;
+    border-radius: 4px;
+}
+
+.postdisplay img{
+    width: 100%;
+    height: auto;
+}
+
+.pdheader{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+.pdfooter{
+    min-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:  #667284;
+    
+}
+
+.notes{
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.footerfooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

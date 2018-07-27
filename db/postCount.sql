@@ -1,0 +1,1 @@
+select count(*) from posts where userid = $1;

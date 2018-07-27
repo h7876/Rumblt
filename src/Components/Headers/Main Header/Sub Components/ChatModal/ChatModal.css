@@ -1,0 +1,114 @@
+#cmmain{
+    height: 401px;
+    width: 280px;
+    background: white;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.cmheader{
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  0 15px 0 15px;
+    font: 12px Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    
+}
+.cmhleft{
+    display: flex;
+    align-items: center;
+    color: #444444;
+}
+
+.cmimg{
+    margin-right: 10px;
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
+    border-radius: 4px;
+    
+}
+.cmimg img{
+    height: 25px;
+    width: auto;
+}
+
+.cmaddmessage{
+    height: 27px;
+    background: #ededed;
+    border-bottom: solid #cecece 1px;
+    border-top: solid #cecece 1px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font: 12px Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    color: #9b9b9b;
+}
+
+.cmnewmessage{
+    color: #529ecc;
+}
+
+.cmpeople{
+    height: 255px;
+    overflow: auto;
+}
+
+.cmpeople::-webkit-scrollbar-track
+{
+	background-color: #cecece;
+}
+
+.cmpeople::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #cecece;
+}
+
+.cmpeople::-webkit-scrollbar-thumb
+{
+	background-color: #9b9b9b;
+}
+
+#cmpeoplecontainer{
+    height: 80px;
+    border-bottom: #ededed solid 1px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+#cmpeoplecontainer:hover{
+    background: #ededed;
+}
+
+.peopleimg{
+    margin-right: 10px;
+    height: 36px;
+    width: 36px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.peopleimg img{
+    height: 100%;
+    width: auto;
+}
+
+.txt{
+    font: 12px Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    color: #acacac;
+}
+
+.weight{
+    font-weight: 700;
+    color:#575757;
+    font-size: 14px;
+}
+
+.mess{
+    font-weight: 700;
+    color:#529ecc;
+}

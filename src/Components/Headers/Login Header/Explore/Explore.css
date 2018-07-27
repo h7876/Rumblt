@@ -1,0 +1,72 @@
+#exploremain{
+    background: #36465d;
+    height: auto;
+    min-height: 100vh;
+    
+  }
+  
+  #explorebody{
+    padding-top: 110px;
+    display: flex;
+    justify-content: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+
+.subheader{
+  background: #36465d;
+  width: 100vw;
+  border-top: 1px white solid;
+  border-bottom: 1px white solid;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font: 12px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  color:  rgba(255, 255, 255, 0.781);
+  font-weight: 700;
+  font: bold;
+  position: fixed;
+  z-index: 100;
+}
+
+.categories{
+  display: flex;
+  width: 35%;
+  justify-content: space-evenly;
+}
+
+.categories p:hover{
+  color: white;
+}
+
+#explorechat{
+  width: 300px;
+  height: 300px;
+  float: right;
+  margin-left: 10px;
+}
+/* 
+#exploreposts{
+  background: gainsboro;
+  width: 95vw;
+  display: flex; 
+ flex-direction: column-reverse; 
+  flex-wrap: wrap-reverse;
+  max-height: 200vw;
+} */
+
+#exploreposts #eppost{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-flow: column wrap;
+  float: right;
+  
+}
+
+.dpcontent img{
+width: 300px;
+height: auto;
+}
+

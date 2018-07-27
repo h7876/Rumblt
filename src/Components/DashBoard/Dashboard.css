@@ -1,0 +1,129 @@
+#maindash{
+    background: #36465d;
+    height: 100%;
+    min-height: 100vh;
+}
+
+#headerdiv{
+   position: fixed;
+   z-index: 100;
+}
+
+#dashleft{
+    width: 625px;
+    margin-right: 20px;
+    
+}
+#dashright{
+    width: 320px;
+    margin-left: 20px;
+    height: 800px;
+    position: sticky;
+    top: 74px;
+    font: 12px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+    color: #919aa7;
+    font-weight: 700;
+}
+#maincontent{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 90px;
+    
+}
+
+.dashfeedtop{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.profileimage{
+    background: paleturquoise;
+    height: 64px;
+    width: 64px;
+    border-radius: 4px;
+    position: sticky;
+    top: 74px;
+    overflow: hidden;
+}
+
+.profileimage img{
+    display: block;
+    height: 64px;
+}
+
+
+
+#nodisplay{
+    display: none;
+}
+
+#createnewwrapper{
+    background: white;
+    width: 540px;
+    height: 99px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#createnewwrapper>div{
+    width: 76px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.atitle{
+    height: 21px;
+    width: 75px;
+    color: #36465d;
+    text-align: center;
+}
+
+.b{
+    border-right: solid rgb(221, 221, 221) 1px;
+    border-left: solid rgb(221, 221, 221) 1px;
+}
+
+#chatheader{
+    border-bottom: #5e6b7d 2px solid;
+    color: #5e6b7d;
+    font: 12px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+}
+
+#dashchat{
+    height: 243px;
+    overflow: auto;
+    margin-bottom: 5px;
+    border-bottom: #5e6b7d 2px solid;
+    
+}
+
+#dashchat::-webkit-scrollbar-track
+{
+	background-color: #36465d;
+}
+
+#dashchat::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #36465d;
+}
+
+#dashchat::-webkit-scrollbar-thumb
+{
+	background-color: #6c7a8f;
+}
+
+
+
+
+

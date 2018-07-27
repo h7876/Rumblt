@@ -1,0 +1,1 @@
+insert into likes (userid, postid) values($1,$2);

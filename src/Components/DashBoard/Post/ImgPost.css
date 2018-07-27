@@ -1,0 +1,62 @@
+.img-input{
+    background: white;
+    width: 538px;
+    min-height: 283px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 2px;
+}
+.text-input input{
+    background: transparent;
+    border: none;
+    width: 95%;
+}
+
+#inputone{
+    width: 94%;
+    height: 100px;
+    min-width: 94%;
+    min-height: 100px;
+    max-width: 95%;
+    border: none;
+}
+
+#inputtwo {
+    width: 94%;
+    height: 100px;
+    min-width: 94%;
+    min-height: 100px;
+    max-width: 95%;
+    border: none;
+}
+
+#tag {
+    width: 94%;
+    height: 100px;
+    min-width: 94%;
+    min-height: 100px;
+    max-width: 95%;
+    border: none;
+}
+
+.buttonwrapper{
+    width: 95%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.buttonwrapper button{
+    border-style: none;
+    width: 73px;
+    height: 20px;
+    font-weight: bold;
+    background: lightslategray;
+    color: whitesmoke;
+    border-radius: 3px;
+}

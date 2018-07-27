@@ -1,0 +1,42 @@
+form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+
+form>input{
+    padding-left: 15px;
+    background: white;
+    border: none;
+    height: 44px;
+    width: 300px;
+    font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+form>input:nth-child(2n){
+    border-top: solid 1px #919aa779;
+    border-bottom: solid 1px #919aa779;
+}
+
+
+form>button{
+    height: 50px;
+    margin-top: 10px;
+    background: #529ecc;
+    color: whitesmoke;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    border: none;
+    font: 16px "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+    font-weight: 600; 
+}
+
+form>button:hover{
+    background: whitesmoke;
+    color: #529ecc;
+    cursor: pointer;
+}

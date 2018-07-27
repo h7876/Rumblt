@@ -1,0 +1,58 @@
+#cu{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #5e6b7d 1px solid;
+    height: 53px;
+    align-items: center;
+}
+
+#culeft{
+    display: flex;
+    font: 12px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+#curight{
+    margin-right: 10px;
+}
+
+#username{
+    color: #919aa7;
+    font-weight: 800;
+}
+
+#cublogtitle{
+    color: lightslategray;
+}
+
+#chatimage{
+    height: 37px;
+    width: 37px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+#chatimage img{
+    height: 100%;
+    width: auto;
+}
+
+#addChat{
+    height: 24px;
+}
+
+#acbox{
+    fill: #5e6b7d;
+}
+
+#acplus{
+    fill: #36465d;
+}
+
+#addChat:hover > #acbox{
+   fill: #529ecc;
+}
+
+#addChat:hover > #acplus{
+    fill: whitesmoke;
+}
+
