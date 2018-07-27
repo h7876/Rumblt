@@ -47,10 +47,11 @@ export class Dashboard extends Component{
         console.log(this.props);
     }
 
-   toggleClose(){
-       this.setState({toggleTextPost: false})
-       this.setState({toggleImgPost: false})
-   }
+    toggleClose(){
+
+        this.setState({toggleTextPost: false}, ()=> {this.getAllPosts()})
+        this.setState({toggleImgPost: false}, ()=> {this.getAllPosts()})
+       }
 
     getLoggedUser () {
         if (this.props.authUser === null) {
