@@ -48,7 +48,7 @@ class SignUpForm extends Component {
     } = this.state;
 
     const {
-      history,
+      history
     } = this.props;
 
     auth.doCreateUserWithEmailAndPassword(email, passwordOne)
@@ -143,7 +143,6 @@ class SignUpForm extends Component {
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>
-
         {/* { error && <p>{error.message}</p> } */}
       </form>
     );
