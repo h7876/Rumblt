@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';
 import LoginBoxes from './LoginBoxes';
 import SignupForm from '../Signup/Signup';
 
-
-
 class Login extends Component {
     constructor() {
         super()
@@ -24,10 +22,7 @@ class Login extends Component {
         this.isLoggedIn = this.isLoggedIn.bind(this);
         this.back = this.back.bind(this);
     }
-
-    componentWillMount() {
-
-    }
+    
     componentDidMount() {
         this.getRandomImage();
         this.isLoggedIn();
@@ -44,11 +39,10 @@ class Login extends Component {
 
     getRandomImage() {
         var queries = ['shibe', 'doge', 'meme', 'art', 'anime', 'cats', 'funny', 'disney', 'food', 'coffee', 'animals', 'trippy', 'mushrooms', 'psychedelic', 'god'];
-
         var query = queries[Math.floor(Math.random() * queries.length)]
-
-        axios.get(`https://api.giphy.com/v1/gifs/random?api_key=lQiHuWLfjlMKb4krrEQar6RKMizcigD3&tag=${query}&rating=PG`).then(res => {
-            this.setState({ image: res.data.data.image_url })
+        const key = process.env.REACT_APP_GIPHY_API_KEY
+        axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${key}&tag=${query}&rating=PG`).then(res => {
+            this.setState({ image: res.data.data.images.original.url })
             document.body.background = this.state.image;
             document.body.style.backgroundSize = "cover";
         })
