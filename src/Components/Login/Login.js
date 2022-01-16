@@ -24,7 +24,9 @@ class Login extends Component {
     }
     
     componentDidMount() {
-        this.getRandomImage();
+        if(this.props.authUser === null){
+            this.getRandomImage();
+        }
         this.isLoggedIn();
     }
 
@@ -45,6 +47,12 @@ class Login extends Component {
             this.setState({ image: res.data.data.images.original.url })
             document.body.background = this.state.image;
             document.body.style.backgroundSize = "cover";
+        }).catch(function (thrown) {
+            if (axios.isCancel(thrown)) {
+                console.log('Request canceled', thrown.message);
+            } else {
+                console.log("Error,", thrown.message)
+            }
         })
     }
 
