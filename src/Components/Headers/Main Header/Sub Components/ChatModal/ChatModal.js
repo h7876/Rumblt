@@ -32,9 +32,9 @@ export default function ChatModal(props){
             FOLLOWING
             </div>
             <div className="cmpeople">
-            {props.users.map(user=>{
+            {props.users.map((user, i)=>{
                 return(
-                    <div id='cmpeoplecontainer' key={user.id}>
+                    <div id='cmpeoplecontainer' key={user.id + i}>
                         <div className="peopleimg">
                         <img src={user.userimg !== null ? user.userimg : 'https://78.media.tumblr.com/004fac2f3b9691a47941d0710496bfff/tumblr_o51oavbMDx1ugpbmuo9_540.png'} alt=""/>
                         </div>
