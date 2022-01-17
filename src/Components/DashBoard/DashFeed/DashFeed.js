@@ -22,6 +22,7 @@ class DashFeed extends Component {
     componentDidMount() {
         this.numberWithCommas();
         this.getUserLikes();
+        this.getPostLikes();
     }
 
     getUserLikes() {
@@ -34,7 +35,7 @@ class DashFeed extends Component {
             })
         })
     }
-
+//TODO: actually update notes here.
     like() {
         let userid = this.props.authUser.uid
         let postid = this.props.id
@@ -55,11 +56,16 @@ class DashFeed extends Component {
             )
         }
     }
-
+//TODO: remove this.
     numberWithCommas() {
         const num = Math.floor(Math.random() * 10000);
         var commaNum = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         this.setState({ likenum: num })
+    }
+    getPostLikes(){
+        axios.get('/api/getLikeCount/' + this.props.id).then((response) => {
+            this.setState({likenum: response.data[0].count})
+        })
     }
 
     render() {
@@ -86,13 +92,13 @@ class DashFeed extends Component {
                     }
                     <div className="pdfooter">
                         <div className="desc">
-                            {this.props.tag === null || this.props.tag === '' ? '#hashtag' :
+                            {this.props.tag === null || this.props.tag === '' ? null :
                                 `#${this.props.tag}`
                             }
                         </div>
                         <div className="footerfooter">
                             <div className="notes">
-                                {`${this.state.likenum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} notes`}
+                                {`${this.state.likenum} notes`}
                             </div>
                             <div id="fficons">
                                 <div id='addLike'>

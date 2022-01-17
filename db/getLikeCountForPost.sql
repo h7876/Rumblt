@@ -1,0 +1,1 @@
+select count(*) from likes where postid = $1;
