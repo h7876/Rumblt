@@ -17,6 +17,7 @@ class DashFeed extends Component {
             likenum: 0
         }
         this.like = this.like.bind(this);
+        this.getPostLikes = this.getPostLikes.bind(this);
     }
 
     componentDidMount() {
@@ -98,7 +99,7 @@ class DashFeed extends Component {
                         </div>
                         <div className="footerfooter">
                             <div className="notes">
-                                {`${this.state.likenum} notes`}
+                                {this.state.likenum + ' notes'}
                             </div>
                             <div id="fficons">
                                 <div id='addLike'>

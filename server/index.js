@@ -110,10 +110,10 @@ app.get('/api/likeCount/:userid', (req, res)=>{
 })
 
 //Get notes count for post (TODO: update to include comments/reblogs)
-app.get('/api/getLikeCount/:postId', (req, res)=>{
+app.get(`/api/getLikeCount/:postid`, (req, res)=>{
     const postid = req.params.postid;
     const dbInstance = req.app.get('db');
-    dbInstance.likesCount([postid]).then(count => {
+    dbInstance.getLikeCountForPost([postid]).then(count => {
         res.status(200).send(count)
     }).catch(err=>{
         console.log(err);
