@@ -50,25 +50,25 @@ export class ImgPost extends Component {
         return (
             <div className='img-input'>
                 <input
-                    id='inputtwo'
+                    id='imgurl'
                     value={this.state.imgurl}
                     onChange={this.handleUrlChange}
                     type='text'
-                    placeholder='image url'
+                    placeholder='Paste Image Url'
                 />
                 <textarea
-                    id='inputone'
+                    id='imgpostbody'
                     value={this.state.textInput}
                     onChange={this.handleTextChange}
                     type='text'
-                    placeholder='Whatcha thinkin about?'
+                    placeholder='Whatcha thinkin about? Write your post here'
                 />
                 <input
                     id='tag'
                     value={this.state.tagInput}
                     onChange={this.handleTagChange}
                     type='text'
-                    placeholder='add some tags!'
+                    placeholder='Add some tags! (Seperate by space)'
                 />
                 <div className="buttonwrapper">
                     <button onClick={() => { this.sendText() }} >Post</button>
