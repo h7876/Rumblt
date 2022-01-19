@@ -46,18 +46,18 @@ export class TextPost extends Component {
         return (
             <div className='text-input'>
                 <textarea
-                    id='inputone'
+                    id='textpostbody'
                     value={this.state.textInput}
                     onChange={this.handleTextChange}
                     type='text'
-                    placeholder='Whatcha thinkin about?'
+                    placeholder='Whatcha thinkin about? Write your post here'
                 />
                 <input
-                    id='inputtwo'
+                    id='tag'
                     value={this.state.tagInput}
                     onChange={this.handleTagChange}
                     type='text'
-                    placeholder='add some tags!'
+                    placeholder='Add some tags! (Seperate by space)'
                 />
                 <div className="buttonwrapper">
                     <button onClick={() => { this.sendText() }} >Post</button>
