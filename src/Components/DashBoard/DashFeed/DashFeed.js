@@ -21,7 +21,6 @@ class DashFeed extends Component {
     }
 
     componentDidMount() {
-        this.numberWithCommas();
         this.getUserLikes();
         this.getPostLikes();
     }
@@ -36,7 +35,7 @@ class DashFeed extends Component {
             })
         })
     }
-//TODO: actually update notes here.
+
     like() {
         let userid = this.props.authUser.uid
         let postid = this.props.id
@@ -44,7 +43,7 @@ class DashFeed extends Component {
             axios.post('/api/likes/', { userid, postid }).then(
                 this.setState({
                     liked: !this.state.liked,
-                    likenum: this.state.likenum + 1
+                    likenum: ++this.state.likenum
                 })
             )
         }
@@ -52,17 +51,12 @@ class DashFeed extends Component {
             axios.delete(`/api/likes/${userid}/${postid}`,).then(
                 this.setState({
                     liked: !this.state.liked,
-                    likenum: this.state.likenum - 1
+                    likenum: --this.state.likenum
                 })
             )
         }
     }
-//TODO: remove this.
-    numberWithCommas() {
-        const num = Math.floor(Math.random() * 10000);
-        var commaNum = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        this.setState({ likenum: num })
-    }
+
     getPostLikes(){
         axios.get('/api/getLikeCount/' + this.props.id).then((response) => {
             this.setState({likenum: response.data[0].count})
@@ -70,6 +64,8 @@ class DashFeed extends Component {
     }
 
     render() {
+        let notes = this.state.likenum + ' notes';
+
         return (
             <div id='maindashfeed'>
                 <div className="posterimage">
@@ -99,7 +95,7 @@ class DashFeed extends Component {
                         </div>
                         <div className="footerfooter">
                             <div className="notes">
-                                {this.state.likenum + ' notes'}
+                                { notes }
                             </div>
                             <div id="fficons">
                                 <div id='addLike'>
