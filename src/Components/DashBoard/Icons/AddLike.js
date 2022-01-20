@@ -1,47 +1,40 @@
-import React, {Component} from 'react';
-import  {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Icons.css'
 
+class AddLike extends Component {
 
- class AddLike extends Component{
- 
-    constructor(props){
+    constructor(props) {
         super(props)
 
-        this.state={
+        this.state = {
             liked: false
         }
         this.likedPost = this.likedPost.bind(this);
     }
 
-// like(){
-//     if(this.state.liked === false){
-//         axios.post('/api/likes/', {})
-//     }
-// }
+    likedPost() {
+        this.setState({ liked: !this.state.liked })
 
-likedPost(){this.setState({liked: !this.state.liked}), console.log(this.props.currentPost + "i'm the liked post")
+    }
 
-}
-
-
-    render(){
-        return(
+    render() {
+        return (
             <div id='addLike'>
-      <svg 
-id="footicon" 
-data-name="Layer 1" 
-xmlns="http://www.w3.org/2000/svg" 
-viewBox="0 0 315 278.01">
-<title>love</title>
-<path id={this.state.liked ? 'heartActive' : 'heart'} onClick={this.likedPost}
-d="M663,211a81,81,0,0,0-146-48.33A81,81,0,1,0,400.6,273.6L508.51,381.51a12,12,0,0,0,17,0L633.4,273.6A80.83,80.83,0,0,0,663,211Z" 
-transform="translate(-359.5 -118.5)" 
-/>
-</svg>
-        </div>
-    )
-}
+                <svg
+                    id="footicon"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 315 278.01">
+                    <title>{this.state.liked ? 'unlove' : 'love'}</title>
+                    <path id={this.state.liked ? 'heartActive' : 'heart'} onClick={this.likedPost}
+                        d="M663,211a81,81,0,0,0-146-48.33A81,81,0,1,0,400.6,273.6L508.51,381.51a12,12,0,0,0,17,0L633.4,273.6A80.83,80.83,0,0,0,663,211Z"
+                        transform="translate(-359.5 -118.5)"
+                    />
+                </svg>
+            </div>
+        )
+    }
 }
 
 const mapStateToProps = (state) => ({

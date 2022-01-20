@@ -126,7 +126,6 @@
 
 #heartActive{
     fill: red;
-    stroke: #8f8f8f;
-    stroke-width: 25px;
     cursor: pointer;
+    border: none;
 }
