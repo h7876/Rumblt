@@ -79,17 +79,16 @@
     justify-content: center;
 }
 
+/* border between each of the icons */
+#createnewwrapper>div:nth-of-type(1n+2){
+ border-left: rgb(221, 221, 221) 1px solid;
+}
 
 .atitle{
     height: 21px;
     width: 75px;
     color: #36465d;
     text-align: center;
-}
-
-.b{
-    border-right: solid rgb(221, 221, 221) 1px;
-    border-left: solid rgb(221, 221, 221) 1px;
 }
 
 #chatheader{
