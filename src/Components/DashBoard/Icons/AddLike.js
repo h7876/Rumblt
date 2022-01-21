@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Icons.css'
 
+//TODO: Evaluate and possibly remove. OR move all methods to here and remove from exploreposts/dashfeed etc
 class AddLike extends Component {
 
     constructor(props) {

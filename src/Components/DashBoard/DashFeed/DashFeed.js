@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import './Dashfeed.css'
-import AddLike from '../Icons/AddLike';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -98,7 +97,6 @@ class DashFeed extends Component {
                                 { notes }
                             </div>
                             <div id="fficons">
-                                {/* Replace this with addlike */}
                                 <div id='addLike'>
                                     <svg
                                         id="footicon"
