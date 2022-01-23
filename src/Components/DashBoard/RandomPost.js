@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './RandomPost.css'
 import AddChat from './Icons/AddChat';
-import AddLike from './Icons/AddLike';
 import Reblog from './Icons/Reblog';
 import { connect } from 'react-redux';
 
@@ -35,7 +34,7 @@ class RandomPost extends Component {
             )
         }
         else {
-            axios.delete(`/api/likes/${userid}/${postid}`,).then(
+            axios.delete(`/api/likes/${userid}/${this.state.displayPost.id}`,).then(
                 this.setState({
                     liked: !this.state.liked,
                     likenum: --this.state.likenum
@@ -60,11 +59,6 @@ class RandomPost extends Component {
             .then(
                 this.getPostLikes()
             )
-    }
-
-    numberWithCommas() {
-        const num = Math.floor(Math.random() * 10000);
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     render() {
