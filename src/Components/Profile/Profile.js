@@ -212,7 +212,8 @@ export class Profile extends Component {
                       </div>
                       <div key={obj.id} className='profile_post'>
                         <div className="ppheader">
-                          "hello"
+                          {/* Username on profile feed posts */}
+                         {obj.username}
                         </div>
                         <div className='profile_post_content_container'>
                           {obj.type === 'img' ?
