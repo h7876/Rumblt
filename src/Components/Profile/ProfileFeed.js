@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
-export default class ProfileFeed extends Component {
+class ProfileFeed extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      likenum: 0
+      likenum: 0,
+      liked: false
     }
     this.getPostLikes = this.getPostLikes.bind(this);
+    this.like = this.like.bind(this);
+    this.getUserLikes = this.getUserLikes.bind(this);
   }
 
   componentDidMount() {
+    this.getUserLikes();
     this.getPostLikes();
   }
 
@@ -56,7 +61,6 @@ export default class ProfileFeed extends Component {
     })
   }
 
-  //Set up handlePostUnlikeOnClick()
   handlePostUnlikeOnClick(userid, postid) {
     axios.delete(
       `/api/likes/${userid}/${postid}`
@@ -66,6 +70,38 @@ export default class ProfileFeed extends Component {
       console.log('delete post like error', error)
     })
   }
+
+  getUserLikes() {
+    let userid = this.props.authUser.uid
+    axios.get('/api/userLikes/' + userid).then((likesResponse) => {
+        likesResponse.data.map((el, i) => {
+            if (el.userid == userid && el.postid == this.props.id) {
+                this.setState({ liked: true })
+            }
+        })
+    })
+}
+
+  like() {
+    let userid = this.props.authUser.uid
+    let postid = this.props.id
+    if (this.state.liked === false) {
+        axios.post('/api/likes/', { userid, postid }).then(
+            this.setState({
+                liked: !this.state.liked,
+                likenum: ++this.state.likenum
+            })
+        )
+    }
+    else {
+        axios.delete(`/api/likes/${userid}/${postid}`,).then(
+            this.setState({
+                liked: !this.state.liked,
+                likenum: --this.state.likenum
+            })
+        )
+    }
+}
 
   render() {
     let notes = this.state.likenum + ' notes';
@@ -112,3 +148,10 @@ export default class ProfileFeed extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  authUser: state.sessionState.authUser
+});
+
+const authCondition = (authUser) => !!authUser;
+export default connect(mapStateToProps)(ProfileFeed)
