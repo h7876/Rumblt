@@ -1,27 +1,17 @@
 // eslint-disable-next-line
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { getUserFollowers } from '../../reducers/following';
 import MainHeader from './../Headers/Main Header/MainHeader';
-import love from './icons/love.svg';
-import notloved from './icons/notloved.svg';
 import default_profile_img from './temp_images/default_profile_pic.png';
 import './Profile.css';
 import ProfileFeed from './ProfileFeed';
-import PFTwo from './PFTwo';
-
-var imgStyle = {
-  width: 25,
-  height: 25
-}
 
 export class Profile extends Component {
   constructor() {
     super();
-
     this.state = {
       isExploreCurrent: false,
       profile_pic: default_profile_img,
@@ -52,7 +42,6 @@ export class Profile extends Component {
     this.setState({ isExploreCurrent: true });
     this.retriveProfileData();
     this.getPostsByUser();
-    // this.getFollowedBlogInfo();
     this.getLikeIds();
     this.getHeaderImg();
   }

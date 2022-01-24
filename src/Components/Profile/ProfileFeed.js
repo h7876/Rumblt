@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import love from './icons/love.svg';
-import notloved from './icons/notloved.svg';
-
-var imgStyle = {
-  width: 25,
-  height: 25
-}
 
 export default class ProfileFeed extends Component {
   constructor(props) {
@@ -38,25 +31,19 @@ export default class ProfileFeed extends Component {
     })
   }
 
-  //Set up method handleChangeToPosts() axios.get the posts they have made,  
-  //(starting with the most recent), set them on state
   handleChangeToPosts() {
     this.getPostsByUser();
   }
 
-  //Set up method handleChangeToLikes() axios.get the posts they have made 
-  //which have the most “hearts”. Sort from most to least.
   handleChangeToLikes() {
     this.setState({ subheader: 'Likes' });
     axios.get(`/api/get_profile_user_likes/${this.props.match.params.userid}`).then(response => {
-      // console.log('get profile liked posts results', response.data);
       this.setState({ posts: response.data });
     }).catch(error => {
       console.log('get profile trending posts error', error);
     })
   }
 
-  //Set up handlePostLikeOnClick()
   handlePostLikeOnClick(userid, postid) {
     axios.post(`/api/likes/`, {
       userid: userid,
