@@ -14,18 +14,18 @@ export default class ProfileFeed extends Component {
     this.state = {
       likenum: 0
     }
+    this.getPostLikes = this.getPostLikes.bind(this);
   }
 
   componentDidMount() {
-    this.numberWithCommas();
+    this.getPostLikes();
   }
 
-  numberWithCommas() {
-    const num = Math.floor(Math.random() * 10000);
-    var commaNum = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    this.setState({ likenum: num })
+  getPostLikes() {
+    axios.get('/api/getLikeCount/' + this.props.id).then((response) => {
+      this.setState({ likenum: response.data[0].count })
+    })
   }
-
   getLikeIds() {
     axios.get(`/api/get_like_ids/${this.props.match.params.userid}`).then(response => {
       let newArray = response.data.map(obj => {
@@ -81,40 +81,46 @@ export default class ProfileFeed extends Component {
   }
 
   render() {
+    let notes = this.state.likenum + ' notes';
     return (
       <div>
-        {this.props.posts ?
-          <div className='profile_posts'>
-            {this.props.posts.map(obj => {
-              console.log(obj)
-              return (
-                <div className="postcontainer">
-                  <div className="postimgcontainer">
-                    <img src={obj.userimg} alt="" />
-                  </div>
-                  <div key={obj.id} className='profile_post'>
-                    <div className="ppheader">
-                      {obj.username}
-                    </div>
-                    <div className='profile_post_content_container'>
-                      {obj.type === 'img' ?
-                        <img className='postcontentimg' src={obj.img} alt='profile post content' /> :
-                        <p className='postcontenttext'>{obj.content}</p>}
-                    </div>
-                    <div className='profile_post_footer'>
-                      <div className="ppfnotes">
-                        {`${this.state.likenum} notes`}
-                      </div>
-                      <div className='profile_post_actions_container'>
-                      </div>
-                    </div>
+        <div className='profile_posts'>
+          <div className="postcontainer">
+            <div className="postimgcontainer">
+              <img src={this.props.userimg} alt="" />
+            </div>
+            <div key={this.props.id} className='profile_post'>
+              <div className="ppheader">
+                {this.props.username}
+              </div>
+              <div className='profile_post_content_container'>
+                {this.props.type === 'img' ?
+                  <img className='postcontentimg' src={this.props.img} alt='profile post content' /> :
+                  <p className='postcontenttext'>{this.props.content}</p>}
+              </div>
+              <div className='profile_post_footer'>
+                <div className="ppfnotes">
+                  {notes}
+                </div>
+                <div className='profile_post_actions_container'>
+                  <div id='addLike'>
+                    <svg
+                      id="footicon"
+                      data-name="Layer 1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 315 278.01">
+                      <title>{this.state.liked ? 'unlove' : 'love'}</title>
+                      <path id={this.state.liked ? 'heartActive' : 'heart'} onClick={this.like}
+                        d="M663,211a81,81,0,0,0-146-48.33A81,81,0,1,0,400.6,273.6L508.51,381.51a12,12,0,0,0,17,0L633.4,273.6A80.83,80.83,0,0,0,663,211Z"
+                        transform="translate(-359.5 -118.5)"
+                      />
+                    </svg>
                   </div>
                 </div>
-              )
-            })}
+              </div>
+            </div>
           </div>
-          :
-          <p>no posts made yet!</p>}
+        </div>
       </div>
     )
   }
