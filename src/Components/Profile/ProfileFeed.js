@@ -19,11 +19,18 @@ class ProfileFeed extends Component {
     this.getPostLikes();
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.subheader !== prevProps.subheader) {
+      this.getUserLikes();
+    }
+  }
+
   getPostLikes() {
     axios.get('/api/getLikeCount/' + this.props.id).then((response) => {
       this.setState({ likenum: response.data[0].count })
     })
   }
+  
   getLikeIds() {
     axios.get(`/api/get_like_ids/${this.props.match.params.userid}`).then(response => {
       let newArray = response.data.map(obj => {
@@ -49,27 +56,6 @@ class ProfileFeed extends Component {
     })
   }
 
-  handlePostLikeOnClick(userid, postid) {
-    axios.post(`/api/likes/`, {
-      userid: userid,
-      postid: postid
-    }).then(() => {
-      this.getLikeIds();
-      this.setState({ likenum: this.state.likenum + 1 })
-    }).catch(error => {
-      console.log('add post like error', error)
-    })
-  }
-
-  handlePostUnlikeOnClick(userid, postid) {
-    axios.delete(
-      `/api/likes/${userid}/${postid}`
-    ).then(() => {
-      this.getLikeIds();
-    }).catch(error => {
-      console.log('delete post like error', error)
-    })
-  }
 
   getUserLikes() {
     let userid = this.props.authUser.uid

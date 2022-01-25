@@ -94,7 +94,7 @@ export class Profile extends Component {
 
   handleChangeToLikes() {
     axios.get(`/api/get_profile_user_likes/${this.props.match.params.userid}`).then(response => {
-      this.setState({ posts: response.data, subheader: 'Likes' });
+      this.setState({ posts: response.data, subheader: 'Likes'});
     }).catch(error => {
       console.log('get profile trending posts error', error);
     })
@@ -149,11 +149,11 @@ export class Profile extends Component {
   render() {
 
     let posts = (
-      <div className='profile_posts'>
+      <div >
         {this.state.posts.map((post, i) => {
           return (
             <div className="feed" key={post + i}>
-              <ProfileFeed {...post} />
+              <ProfileFeed {...post} subheader={this.state.subheader} />
             </div>
           )
         })}
