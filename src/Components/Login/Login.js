@@ -115,6 +115,8 @@ const mapStateToProps = (state) => ({
     authUser: state.sessionState.authUser
 });
 
+//TODO: evaluate if this is still needed.
+// eslint-disable-next-line
 const authCondition = (authUser) => !!authUser;
 
 export default connect(mapStateToProps)(Login);

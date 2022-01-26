@@ -50,9 +50,11 @@
 
 #addChat:hover > #acbox{
    fill: #529ecc;
+   cursor: pointer;
 }
 
 #addChat:hover > #acplus{
     fill: whitesmoke;
+    cursor: pointer;
 }
 

@@ -11,8 +11,7 @@ class ExplorePosts extends Component {
         this.state = {
             liked: false,
             likenum: 0,
-            hide: false,
-            likenum: 0
+            hide: false
         }
         this.like = this.like.bind(this);
         this.getPostLikes = this.getPostLikes.bind(this);

@@ -7,9 +7,8 @@ import { connect } from 'react-redux';
 import ChatUsers from './ChatUsers';
 import axios from 'axios';
 import RandomPost from './RandomPost';
-// import {compose} from 'recompose';
-// import withAuthentication from '../../withAuthentication';
-// import withAuthorization from '../../withAuthorization';
+//TODO: evaluate or remove this.
+// eslint-disable-next-line
 import SignOutButton from '../Login/signOut';
 import InsertText from './Icons/InsertText'
 import InsertQuote from './Icons/InsertQuote'
