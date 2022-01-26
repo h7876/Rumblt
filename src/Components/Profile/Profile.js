@@ -10,8 +10,8 @@ import './Profile.css';
 import ProfileFeed from './ProfileFeed';
 
 export class Profile extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isExploreCurrent: false,
       profile_pic: default_profile_img,
@@ -34,6 +34,8 @@ export class Profile extends Component {
     this.handlePostLikeOnClick = this.handlePostLikeOnClick.bind(this);
     this.handlePostUnlikeOnClick = this.handlePostUnlikeOnClick.bind(this);
     this.checkFollowStatus = this.checkFollowStatus.bind(this);
+    this.follow = this.follow.bind(this);
+    this.unfollow = this.unfollow.bind(this);
   }
 
   componentDidMount() {
@@ -94,7 +96,7 @@ export class Profile extends Component {
 
   handleChangeToLikes() {
     axios.get(`/api/get_profile_user_likes/${this.props.match.params.userid}`).then(response => {
-      this.setState({ posts: response.data, subheader: 'Likes'});
+      this.setState({ posts: response.data, subheader: 'Likes' });
     }).catch(error => {
       console.log('get profile trending posts error', error);
     })
@@ -125,19 +127,22 @@ export class Profile extends Component {
   follow() {
     axios.post(`/api/newFollower/${this.props.authUser.uid}/${this.props.match.params.userid}`).then(() => {
       //add toaster
+      this.setState({ followedByAuthUser: true })
     })
   }
 
   unfollow() {
     axios.delete(`/api/unfollow/${this.props.authUser.uid}/${this.props.match.params.userid}`).then(() => {
       //add toaster
+      this.setState({ followedByAuthUser: false })
     })
   }
 
   checkFollowStatus() {
+    //TODO: eval need to update the endpoint for this, doesn't need to check multiple ids if it's just one profile on the page.
     axios.get(`/api/user/following/${this.props.authUser.uid}`).then(res => {
-      res.data.map((el, id) => {
-        if (el.followeduserid == this.props.match.params.userid) {
+      res.data.forEach(el => {
+        if (el.followeduserid === this.props.match.params.userid) {
           this.setState({ followedByAuthUser: true })
         } else {
           this.setState({ followedByAuthUser: false })
@@ -184,9 +189,9 @@ export class Profile extends Component {
               <div className='profile_trending_nav ppn' onClick={this.handleChangeToLikes}>Likes</div>
               {
                 this.state.followedByAuthUser ?
-                  <div className="ppn" onClick={() => { this.unfollow(), this.setState({ followedByAuthUser: false }) }}>Unfollow</div>
+                  <div className="ppn" onClick={this.unfollow}>Unfollow</div>
                   :
-                  <div className="ppn" onClick={() => { this.follow(), this.setState({ followedByAuthUser: true }) }}>Follow</div>
+                  <div className="ppn" onClick={this.follow}>Follow</div>
               }
             </div>
           </div>
