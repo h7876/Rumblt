@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LoginBoxes from './LoginBoxes';
 import SignupForm from '../Signup/Signup';
+import giphy_attr from '../../giphy/giphy_attr.png'
 
 class Login extends Component {
     constructor() {
@@ -40,7 +41,7 @@ class Login extends Component {
     }
 
     getRandomImage() {
-        var queries = ['shibe', 'doge', 'meme', 'art', 'anime', 'cats', 'funny', 'disney', 'food', 'coffee', 'animals', 'trippy', 'mushrooms', 'psychedelic', 'god'];
+        var queries = ['shibe', 'doge', 'meme', 'art', 'anime', 'cats', 'funny', 'disney', 'food', 'coffee', 'animals', 'trippy', 'animals'];
         var query = queries[Math.floor(Math.random() * queries.length)]
         const key = process.env.REACT_APP_GIPHY_API_KEY
         axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${key}&tag=${query}&rating=PG`).then(res => {
@@ -106,6 +107,7 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
+                <img className="giphyAttr" src={giphy_attr} alt="Powered by Giphy" />
             </div>
         )
     }

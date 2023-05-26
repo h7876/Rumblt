@@ -171,3 +171,8 @@
     width: 100px;
     cursor: pointer;
 }
+.giphyAttr{
+    position:fixed;
+    bottom:10px;
+    right:10px;
+}
